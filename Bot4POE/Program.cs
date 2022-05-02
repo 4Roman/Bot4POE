@@ -6,9 +6,8 @@ namespace Bot4POE
     {
         static void Main(string[] args)
         {
-            Bitmap test = (Bitmap)Screenshot.MakeScreenshot().Clone(); 
-            Console.WriteLine(test.Width);
-            Console.WriteLine(test.Height);
+            Bitmap test = (Bitmap)Screenshot.MakeScreenshot();
+            Screenshot.Crop(test);
         }
     }
 }
