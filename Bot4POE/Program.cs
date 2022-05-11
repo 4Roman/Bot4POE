@@ -1,13 +1,25 @@
 ﻿using System;
+using System.Drawing.Imaging;
+using Utilities;
+
 
 namespace Bot4POE
 {
     internal class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            Bitmap test = (Bitmap)Screenshot.MakeScreenshot();
-            Screenshot.Crop(test);
+            var kh = new KeyboardHook(true);
+            kh.KeyDown += Kh_KeyDown;
+            Application.Run();
         }
+
+        private static void Kh_KeyDown(Keys key, bool Shift, bool Ctrl, bool Alt)
+        {
+            Console.WriteLine("The Key: " + key);
+        }
+
     }
+
 }
