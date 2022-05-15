@@ -12,7 +12,7 @@ namespace Bot4POE
         {
             var kh = new KeyboardHook(true);
             kh.KeyDown += Kh_KeyDown;
-            Application.Run();
+            Application.Run();            
         }
 
         private static void Kh_KeyDown(Keys key, bool Shift, bool Ctrl, bool Alt)
